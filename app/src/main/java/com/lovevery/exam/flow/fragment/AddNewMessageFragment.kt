@@ -22,6 +22,7 @@ import com.lovevery.exam.flow.model.MessageByUserUi
 import com.lovevery.exam.flow.viewmodel.AddMessageViewModel
 import com.lovevery.exam.utils.extensions.activityViewModel
 import com.lovevery.exam.utils.extensions.className
+import com.lovevery.exam.utils.extensions.hide
 import com.lovevery.exam.utils.extensions.show
 import com.lovevery.exam.utils.extensions.viewModel
 import com.xwray.groupie.GroupAdapter
@@ -91,6 +92,7 @@ class AddNewMessageFragment : FragmentView() {
     }
 
     private fun createItemList(listMessage: List<MessageByUserUi.BodyMessage>) {
+        binding.lottieAnimationLayer.hide()
         listMessageAdapter.clear()
         listMessageAdapter.addAll(
             listMessage.map {

@@ -19,6 +19,7 @@ import com.lovevery.exam.flow.fragmentsheet.AddUserFragmentSheet
 import com.lovevery.exam.flow.viewmodel.MessagesViewModel
 import com.lovevery.exam.utils.extensions.activityViewModel
 import com.lovevery.exam.utils.extensions.className
+import com.lovevery.exam.utils.extensions.hide
 import com.xwray.groupie.GroupAdapter
 import com.xwray.groupie.GroupieViewHolder
 
@@ -76,6 +77,7 @@ class UserRegisteredFragment : FragmentView() {
     }
 
     private fun createItemList(userList: List<String>) {
+        binding.lottieAnimationLayer.hide()
         usersAdapter.clear()
         usersAdapter.addAll(
             userList.map {
