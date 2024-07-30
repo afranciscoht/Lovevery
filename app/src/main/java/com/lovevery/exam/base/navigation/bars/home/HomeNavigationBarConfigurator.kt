@@ -36,16 +36,9 @@ internal class HomeNavigationBarConfigurator(private val interactor: HomeNavigat
                 R.styleable.NavigationBar_navigation_bar_title,
                 interactor::setTitle
             )
-            getResourceId(R.styleable.NavigationBar_navigation_bar_subtitle,
-                interactor::setSubtitle
-            )
             getResourceId(
                 R.styleable.NavigationBar_navigation_bar_title_text_color,
                 interactor::setTitleTextColor
-            )
-            getResourceId(
-                R.styleable.NavigationBar_navigation_bar_subtitle_text_color,
-                interactor::setSubtitleTextColor
             )
         }
     }

@@ -6,27 +6,14 @@
             <enum name="regular" value="0" />
             <enum name="compact" value="1" />
             <enum name="home" value="2" />
-            <enum name="progress" value="3" />
-            <enum name="summary" value="4" />
-            <enum name="detail" value="5" />
         </attr>
         <attr name="navigation_bar_title" format="reference" />
-        <attr name="navigation_bar_detail" format="reference" />
-        <attr name="navigation_bar_subtitle" format="reference" />
         <attr name="navigation_bar_title_text_color" format="reference" />
-        <attr name="navigation_bar_detail_text_color" format="reference" />
-        <attr name="navigation_bar_subtitle_text_color" format="reference" />
         <attr name="navigation_bar_background" format="reference" />
         <attr name="navigation_bar_show_back_button" format="boolean" />
         <attr name="navigation_bar_first_menu_icon" format="reference" />
         <attr name="navigation_bar_second_menu_icon" format="reference" />
         <attr name="navigation_bar_circular_background_menu_icon" format="boolean" />
-        <attr name="navigation_bar_progress_mode" format="enum">
-            <enum name="story" value="0" />
-            <enum name="stepped" value="1" />
-        </attr>
-        <attr name="navigation_bar_progress_count" format="integer" />
-        <attr name="navigation_bar_progress_current_count" format="integer" />
     </declare-styleable>
 
     <declare-styleable name="Snackbar" tools:ignore="ResourceName">
@@ -37,13 +24,6 @@
             <enum name="error" value="2" />
         </attr>
         <attr name="snackbar_end_icon" format="reference" />
-    </declare-styleable>
-
-    <declare-styleable name="StoryList" tools:ignore="ResourceName">
-        <attr name="story_list_story_count" format="integer" />
-        <attr name="story_list_auto_continue" format="boolean" />
-        <attr name="story_list_auto_start" format="boolean" />
-        <attr name="story_list_story_duration_seconds" format="integer" />
     </declare-styleable>
 
     <declare-styleable name="HandleBarModal" tools:ignore="ResourceName">

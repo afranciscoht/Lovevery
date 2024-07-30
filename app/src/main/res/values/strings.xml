@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">My Application</string>
+
+    <string name="home_message_button_add_user">Add user</string>
+    <string name="home_message_title">Create user name</string>
+    <string name="home_message_name_hint">Name</string>
 </resources>

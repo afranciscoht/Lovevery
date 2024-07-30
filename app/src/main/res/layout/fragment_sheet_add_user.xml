@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.lovevery.exam.components.HandleBarModal xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/barModal_container"
+    android:layout_width="match_parent"
+    android:layout_height="300dp"
+    app:handle_bar_modal_floating="true"
+    app:handle_bar_modal_peek_height="@dimen/spacing_0"
+    app:handle_bar_modal_subtitle="@string/home_message_title">
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayout_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/border_radius_5"
+        android:layout_marginVertical="@dimen/spacing_5"
+        android:hint="@string/home_message_name_hint"
+        app:boxStrokeColor="@color/heavy_green"
+        app:endIconMode="clear_text"
+        app:endIconTint="@color/heavy_green"
+        app:hintTextColor="@color/heavy_green"
+        app:layout_constraintBottom_toTopOf="@+id/button_add_user"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/view_divider">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editText_name"
+            style="@style/Lovevery.Text.Caption2Regular"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@android:color/transparent"
+            android:inputType="textAutoComplete" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/button_add_user"
+        style="@style/Lovevery.MainButton"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginStart="@dimen/spacing_5"
+        android:layout_marginEnd="@dimen/spacing_5"
+        android:layout_marginBottom="@dimen/spacing_5"
+        android:text="@string/home_message_button_add_user"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</com.lovevery.exam.components.HandleBarModal>
