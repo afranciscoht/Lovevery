@@ -4,6 +4,7 @@ import com.lovevery.exam.base.anvil.AppScope
 import com.lovevery.exam.base.application.InjectableApplication
 import com.lovevery.exam.base.di.module.ExamAppModule
 import com.lovevery.exam.base.di.module.ExamModule
+import com.lovevery.exam.base.di.network.NetworkModule
 import com.squareup.anvil.annotations.MergeComponent
 import dagger.BindsInstance
 import dagger.Component
@@ -16,6 +17,7 @@ import javax.inject.Singleton
     modules = [
         AndroidSupportInjectionModule::class,
         ExamAppModule::class,
+        NetworkModule::class,
         ExamModule::class
     ]
 )

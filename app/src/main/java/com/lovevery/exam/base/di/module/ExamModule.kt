@@ -4,12 +4,17 @@ import android.content.Context
 import android.graphics.drawable.Drawable
 import androidx.core.content.ContextCompat
 import com.google.gson.Gson
+import com.lovevery.exam.base.di.network.ExamServicesModule
 import com.lovevery.exam.base.di.providers.ResourceProvider
 import dagger.Module
 import dagger.Provides
 import dagger.Reusable
 
-@Module
+@Module(
+    includes = [
+        ExamServicesModule::class
+    ]
+)
 class ExamModule {
 
     @Provides
