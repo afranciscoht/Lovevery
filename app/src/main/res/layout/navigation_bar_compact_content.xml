@@ -20,12 +20,11 @@
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/textView_navigationBar_title"
-        style="@style/Lovevery.Text.Caption1Regular"
+        style="@style/Lovevery.Text.H4Heavy"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/spacing_6"
         android:maxLines="2"
-        android:visibility="gone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"

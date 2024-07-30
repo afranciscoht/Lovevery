@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layoutDescription="@xml/navigation_bar_scene"
-    app:navigation_bar_mode="regular"
+    app:navigation_bar_mode="compact"
     app:navigation_bar_show_back_button="true">
 
     <androidx.fragment.app.FragmentContainerView

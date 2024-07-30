@@ -28,17 +28,16 @@
 
         <TextView
             android:id="@+id/textView_name"
+            style="@style/Lovevery.Text.Caption2Regular"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="@dimen/border_radius_4"
             android:maxLines="1"
-            android:textColor="@color/black"
-            android:textSize="15sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/textView_count_message"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:text="Resumen de la pregunta aquí" />
+            tools:text="Name user added" />
 
         <ImageView
             android:id="@+id/imageView_arrow_right"
