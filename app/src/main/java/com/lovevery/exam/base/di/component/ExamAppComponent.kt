@@ -2,6 +2,7 @@ package com.lovevery.exam.base.di.component
 
 import androidx.fragment.app.FragmentActivity
 import com.lovevery.exam.base.di.module.ExamModule
+import com.lovevery.exam.base.di.network.NetworkModule
 import dagger.Component
 import dagger.android.DispatchingAndroidInjector
 import dagger.android.support.AndroidSupportInjectionModule
@@ -12,6 +13,7 @@ import javax.inject.Singleton
     dependencies = [ExamComponent::class],
     modules = [
         AndroidSupportInjectionModule::class,
+        NetworkModule::class,
         ExamModule::class
     ]
 )

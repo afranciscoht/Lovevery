@@ -6,11 +6,15 @@ import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import com.lovevery.exam.R
 import com.lovevery.exam.base.activities.BaseNavigationBarActivity
+import com.lovevery.exam.base.di.component.injector
 import com.lovevery.exam.base.navigation.NavigationBar
 import com.lovevery.exam.base.navigation.interfaces.NavigationControllerProvider
 import com.lovevery.exam.databinding.ActivityMainBinding
 import com.lovevery.exam.flow.fragment.UserRegisteredFragment
 import com.lovevery.exam.flow.fragment.UserRegisteredFragmentDirections
+import com.lovevery.exam.flow.viewmodel.AddMessageViewModel
+import com.lovevery.exam.utils.extensions.activityViewModel
+import com.lovevery.exam.utils.extensions.viewModel
 
 class MainActivity :
     BaseNavigationBarActivity(),
@@ -31,7 +35,11 @@ class MainActivity :
     }
 
     override fun navigateToDetailMessage(userName: String) {
-        provideNavController().navigate(UserRegisteredFragmentDirections.actionHomeMessagesToNewMessage(userName))
+        provideNavController().navigate(
+            UserRegisteredFragmentDirections.actionHomeMessagesToNewMessage(
+                userName
+            )
+        )
     }
 
     override fun onSupportNavigateUp(): Boolean {
