@@ -1,7 +1,13 @@
 <resources>
     <string name="app_name">My Application</string>
 
+    <string name="home_message_home">Contacts</string>
     <string name="home_message_button_add_user">Add user</string>
     <string name="home_message_title">Create user name</string>
     <string name="home_message_name_hint">Name</string>
+
+    <string name="messages_list_new_message">Add Message</string>
+    <string name="messages_list_create_message">Create Message</string>
+    <string name="messages_list_create_title">Title</string>
+    <string name="messages_list_create_body">Message</string>
 </resources>
