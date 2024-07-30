@@ -1,5 +1,7 @@
-package com.lovevery.exam.base.di.network
+package com.lovevery.exam.base.di.module
 
+import com.lovevery.exam.base.di.network.Microservices
+import com.lovevery.exam.base.di.network.retrofitBuilder
 import dagger.Module
 import dagger.Provides
 import okhttp3.OkHttpClient
@@ -7,9 +9,9 @@ import retrofit2.Retrofit
 import javax.inject.Singleton
 
 @Module(
-    // includes = [
-    //     ExamServicesApiModule::class
-    // ]
+    includes = [
+        ExamServicesApiModule::class
+    ]
 )
 object ExamServicesModule {
 
@@ -22,7 +24,7 @@ object ExamServicesModule {
     ): Retrofit {
         return retrofitBuilder(
             httpClient,
-            "https://abraxvasbh.execute-api.us-east-2.amazonaws.com/proto/messages/"
+            "https://abraxvasbh.execute-api.us-east-2.amazonaws.com/proto/"
         ).build()
     }
 }
