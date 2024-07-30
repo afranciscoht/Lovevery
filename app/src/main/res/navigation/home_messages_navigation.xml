@@ -3,12 +3,31 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/home_messages_navigation"
-    app:startDestination="@id/home_messages">
+    app:startDestination="@id/home_messages_fragment">
 
     <fragment
-        android:id="@+id/home_messages"
+        android:id="@+id/home_messages_fragment"
         android:name="com.lovevery.exam.flow.fragment.UserRegisteredFragment"
         tools:layout="@layout/fragment_users_registered">
+
+        <action
+            android:id="@+id/action_home_messages_to_new_message"
+            app:destination="@id/new_message_fragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/new_message_fragment"
+        android:name="com.lovevery.exam.flow.fragment.AddNewMessageFragment"
+        tools:layout="@layout/fragment_messages_by_user_selected">
+
+        <argument
+            android:name="userName"
+            app:argType="string" />
+
 
     </fragment>
 

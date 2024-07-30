@@ -10,6 +10,7 @@ import com.lovevery.exam.base.navigation.NavigationBar
 import com.lovevery.exam.base.navigation.interfaces.NavigationControllerProvider
 import com.lovevery.exam.databinding.ActivityMainBinding
 import com.lovevery.exam.flow.fragment.UserRegisteredFragment
+import com.lovevery.exam.flow.fragment.UserRegisteredFragmentDirections
 
 class MainActivity :
     BaseNavigationBarActivity(),
@@ -29,16 +30,17 @@ class MainActivity :
         setContentView(binding.root)
     }
 
-    override fun navigateToDetailMessage() {
-        TODO("Not yet implemented")
+    override fun navigateToDetailMessage(userName: String) {
+        provideNavController().navigate(UserRegisteredFragmentDirections.actionHomeMessagesToNewMessage(userName))
     }
 
     override fun onSupportNavigateUp(): Boolean {
         return when (provideNavController().currentDestination?.id) {
-            R.id.home_messages -> {
+            R.id.home_messages_fragment -> {
                 finish()
                 true
             }
+
             else -> provideNavController().navigateUp()
         }
     }

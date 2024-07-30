@@ -6,12 +6,16 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.lovevery.exam.R
 import com.lovevery.exam.base.di.component.injector
 import com.lovevery.exam.base.fragments.FragmentView
 import com.lovevery.exam.base.fragments.viewBinding
+import com.lovevery.exam.base.navigation.NavigationBarProvider
+import com.lovevery.exam.base.navigation.bars.compact.CompactNavigationBar
 import com.lovevery.exam.databinding.FragmentUsersRegisteredBinding
 import com.lovevery.exam.flow.action.MessagesAction
 import com.lovevery.exam.flow.adapter.NewUserAdapter
+import com.lovevery.exam.flow.fragmentsheet.AddUserFragmentSheet
 import com.lovevery.exam.flow.viewmodel.MessagesViewModel
 import com.lovevery.exam.utils.extensions.activityViewModel
 import com.lovevery.exam.utils.extensions.className
@@ -30,16 +34,19 @@ class UserRegisteredFragment : FragmentView() {
 
     private lateinit var usersAdapter: GroupAdapter<GroupieViewHolder>
 
+    private var navigationBarProvider: NavigationBarProvider? = null
     private var listener: UserRegisteredListener? = null
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
         listener = context as? UserRegisteredListener
+        navigationBarProvider = context as? NavigationBarProvider
     }
 
     override fun onDetach() {
         super.onDetach()
         listener = null
+        navigationBarProvider = null
     }
 
     override fun onCreateView(
@@ -50,6 +57,9 @@ class UserRegisteredFragment : FragmentView() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        navigationBarProvider?.provideNavigationBar()?.configure<CompactNavigationBar>{
+            setTitle(getString(R.string.home_message_home))
+        }
         initButtonListener()
         bindViewModel()
         initRecyclerView()
@@ -70,7 +80,7 @@ class UserRegisteredFragment : FragmentView() {
         usersAdapter.addAll(
             userList.map {
                 NewUserAdapter(it) {
-                    //navigate to detail messages
+                    listener?.navigateToDetailMessage(it)
                 }
             }
         )
@@ -92,6 +102,6 @@ class UserRegisteredFragment : FragmentView() {
     }
 
     interface UserRegisteredListener {
-        fun navigateToDetailMessage()
+        fun navigateToDetailMessage(userName: String)
     }
 }

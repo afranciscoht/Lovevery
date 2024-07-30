@@ -3,7 +3,6 @@ package com.lovevery.exam.flow.viewmodel
 import androidx.lifecycle.MediatorLiveData
 import androidx.lifecycle.MutableLiveData
 import com.lovevery.exam.base.viewmodel.BaseViewModel
-import com.lovevery.exam.base.viewmodel.SingleLiveEvent
 import com.lovevery.exam.flow.action.MessagesAction
 import com.lovevery.exam.utils.extensions.asLiveData
 import com.lovevery.exam.utils.extensions.asValue
@@ -14,7 +13,7 @@ class MessagesViewModel @Inject constructor() : BaseViewModel() {
     private val newUserNameValue = MutableLiveData<String>()
     private val listUserAdded = mutableListOf<String>()
 
-    private val action = SingleLiveEvent<MessagesAction>()
+    private val action = MutableLiveData<MessagesAction>()
     fun getAction() = action.asLiveData()
 
     private val isButtonAddUserEnable = MediatorLiveData<Boolean>().apply {
