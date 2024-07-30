@@ -4,7 +4,9 @@ import com.lovevery.exam.data.service.MessagesService
 import com.lovevery.exam.base.di.network.Microservices
 import com.lovevery.exam.base.mapper.BaseMapper
 import com.lovevery.exam.data.mapper.SendMessageMapper
+import com.lovevery.exam.data.mapper.SentMessageMapper
 import com.lovevery.exam.data.model.MessageByUserResponse
+import com.lovevery.exam.data.model.MessageSentResponse
 import com.lovevery.exam.flow.model.MessageByUserUi
 import dagger.Binds
 import dagger.Module
@@ -18,6 +20,11 @@ interface ExamServicesApiModule {
     fun bindsSendMessageMapper(
         sendMessageMapper: SendMessageMapper
     ): BaseMapper<MessageByUserResponse, MessageByUserUi>
+
+    @Binds
+    fun bindsSentMessageMapper(
+        sentMessageMapper: SentMessageMapper
+    ): BaseMapper<MessageSentResponse, MessageByUserUi>
 
     companion object {
 

@@ -2,6 +2,7 @@ package com.lovevery.exam.data.service
 
 import com.lovevery.exam.data.model.MessageByUserRequest
 import com.lovevery.exam.data.model.MessageByUserResponse
+import com.lovevery.exam.data.model.MessageSentResponse
 import io.reactivex.Completable
 import io.reactivex.Single
 import retrofit2.http.Body
@@ -19,5 +20,5 @@ interface MessagesService {
     @POST("messages")
     fun sendMessage(
         @Body message: MessageByUserRequest
-    ): Single<Completable>
+    ): Single<MessageSentResponse>
 }

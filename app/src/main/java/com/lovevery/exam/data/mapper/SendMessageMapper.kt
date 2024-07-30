@@ -1,5 +1,6 @@
 package com.lovevery.exam.data.mapper
 
+import com.google.gson.Gson
 import com.lovevery.exam.base.mapper.BaseMapper
 import com.lovevery.exam.base.mapper.requireNotNullOrBlank
 import com.lovevery.exam.data.model.MessageByUserResponse
@@ -10,11 +11,12 @@ class SendMessageMapper @Inject constructor() :
     BaseMapper<MessageByUserResponse, MessageByUserUi> {
 
     override fun map(input: MessageByUserResponse): MessageByUserUi {
+        val gson = Gson()
         try {
-
+            val bodyResponse = gson.fromJson(input.body, MessageByUserResponse.Body::class.java)
             return MessageByUserUi(
-                user = input.body?.user.requireNotNullOrBlank("Body.User is required"),
-                listMessage = mapListMessage(input.body?.listMessage)
+                user = bodyResponse.user.requireNotNullOrBlank("Body.User is required"),
+                listMessage = mapListMessage(bodyResponse.listMessage)
             )
         } catch (exception: IllegalArgumentException) {
             throw exception

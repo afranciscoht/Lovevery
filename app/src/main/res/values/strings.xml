@@ -10,4 +10,8 @@
     <string name="messages_list_create_message">Create Message</string>
     <string name="messages_list_create_title">Title</string>
     <string name="messages_list_create_body">Message</string>
+
+    <string name="generic_error">Error getting the information</string>
+    <string name="success_message_empty_list">No messages yet</string>
+    <string name="success_message">Sent Message</string>
 </resources>

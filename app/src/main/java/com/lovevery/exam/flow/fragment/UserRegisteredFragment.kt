@@ -57,7 +57,7 @@ class UserRegisteredFragment : FragmentView() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        navigationBarProvider?.provideNavigationBar()?.configure<CompactNavigationBar>{
+        navigationBarProvider?.provideNavigationBar()?.configure<CompactNavigationBar> {
             setTitle(getString(R.string.home_message_home))
         }
         initButtonListener()
@@ -79,8 +79,8 @@ class UserRegisteredFragment : FragmentView() {
         usersAdapter.clear()
         usersAdapter.addAll(
             userList.map {
-                NewUserAdapter(it) {
-                    listener?.navigateToDetailMessage(it)
+                NewUserAdapter(it) { name ->
+                    listener?.navigateToDetailMessage(name)
                 }
             }
         )

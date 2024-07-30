@@ -6,18 +6,26 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.navArgs
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.lovevery.exam.base.di.component.injector
 import com.lovevery.exam.base.fragments.FragmentView
 import com.lovevery.exam.base.fragments.viewBinding
 import com.lovevery.exam.base.navigation.NavigationBarProvider
 import com.lovevery.exam.base.navigation.bars.compact.CompactNavigationBar
+import com.lovevery.exam.base.views.showMessage
+import com.lovevery.exam.base.views.snack.SnackbarState
 import com.lovevery.exam.databinding.FragmentMessagesByUserSelectedBinding
+import com.lovevery.exam.flow.action.SendMessageAction
+import com.lovevery.exam.flow.adapter.NewMessageAdapter
 import com.lovevery.exam.flow.fragmentsheet.AddMessageFragmentSheet
+import com.lovevery.exam.flow.model.MessageByUserUi
 import com.lovevery.exam.flow.viewmodel.AddMessageViewModel
 import com.lovevery.exam.utils.extensions.activityViewModel
 import com.lovevery.exam.utils.extensions.className
 import com.lovevery.exam.utils.extensions.show
 import com.lovevery.exam.utils.extensions.viewModel
+import com.xwray.groupie.GroupAdapter
+import com.xwray.groupie.GroupieViewHolder
 
 class AddNewMessageFragment : FragmentView() {
 
@@ -32,6 +40,8 @@ class AddNewMessageFragment : FragmentView() {
     private val viewModel: AddMessageViewModel by activityViewModel {
         requireActivity().injector.addMessageViewModel
     }
+
+    private lateinit var listMessageAdapter: GroupAdapter<GroupieViewHolder>
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
@@ -56,6 +66,7 @@ class AddNewMessageFragment : FragmentView() {
         }
         initButtonListener()
         bindViewModel()
+        initRecyclerView()
         viewModel.setUserNameValue(args.userName)
     }
 
@@ -66,9 +77,34 @@ class AddNewMessageFragment : FragmentView() {
     }
 
     private fun bindViewModel() {
-        // viewModel.getShowProgress().observe(viewLifecycleOwner) {
-        //     binding.frameLayoutProgress.show(it)
-        // }
+        viewModel.getAction().observe(viewLifecycleOwner, ::handleAction)
+    }
 
+    private fun handleAction(action: SendMessageAction) {
+        when(action) {
+            is SendMessageAction.ShowLoading -> binding.frameLayoutProgress.show(action.showLoading)
+            is SendMessageAction.ShowListMessageByUser -> createItemList(action.listMessage)
+            is SendMessageAction.ShowMessage -> requireActivity().showMessage(
+                SnackbarState.ERROR, action.message
+            )
+        }
+    }
+
+    private fun createItemList(listMessage: List<MessageByUserUi.BodyMessage>) {
+        listMessageAdapter.clear()
+        listMessageAdapter.addAll(
+            listMessage.map {
+                NewMessageAdapter(it)
+            }
+        )
+    }
+
+    private fun initRecyclerView() {
+        listMessageAdapter = GroupAdapter()
+        binding.recyclerViewMessages.apply {
+            layoutManager = LinearLayoutManager(context)
+            setHasFixedSize(true)
+            adapter = listMessageAdapter
+        }
     }
 }
