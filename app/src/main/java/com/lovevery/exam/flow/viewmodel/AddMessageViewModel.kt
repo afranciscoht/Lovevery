@@ -26,7 +26,7 @@ class AddMessageViewModel @Inject constructor(
     private val showProgress = SingleLiveEvent<Boolean>()
     fun getShowProgress() = showProgress.asLiveData()
 
-    private val action = SingleLiveEvent<SendMessageAction>()
+    private val action = MutableLiveData<SendMessageAction>()
     fun getAction() = action.asLiveData()
 
     private val userNameValue = MutableLiveData("")
@@ -98,8 +98,7 @@ class AddMessageViewModel @Inject constructor(
                 .doFinally { action.value = SendMessageAction.ShowLoading(false) }
                 .subscribe({
                     action.value = if (it.listMessage.isNotEmpty()) {
-                        listMessage.addAll(it.listMessage)
-                        SendMessageAction.ShowListMessageByUser(listMessage)
+                        SendMessageAction.ShowListMessageByUser(it.listMessage)
                     } else {
                         SendMessageAction.ShowMessage(
                             resourceRequest.getString(R.string.success_message_empty_list),

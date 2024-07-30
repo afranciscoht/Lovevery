@@ -26,8 +26,8 @@ class SentMessageMapper @Inject constructor(
     private fun mapListMessage(message: MessageSentResponse.Body?): List<MessageByUserUi.BodyMessage> {
         return listOf(
             MessageByUserUi.BodyMessage(
-                subject = message?.subject.requireNotNullOrBlank("Message.Title is required"),
-                message = message?.message.requireNotNullOrBlank("Message.Body is required")
+                subject = message?.subject.requireNotNullOrBlank("Message.Subject"),
+                message = message?.message.requireNotNullOrBlank("Message.Body")
             )
         )
     }

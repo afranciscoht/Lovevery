@@ -7,7 +7,7 @@ import com.lovevery.exam.data.model.MessageByUserResponse
 import com.lovevery.exam.flow.model.MessageByUserUi
 import javax.inject.Inject
 
-class SendMessageMapper @Inject constructor() :
+class GetMessagesMapper @Inject constructor() :
     BaseMapper<MessageByUserResponse, MessageByUserUi> {
 
     override fun map(input: MessageByUserResponse): MessageByUserUi {
@@ -15,7 +15,7 @@ class SendMessageMapper @Inject constructor() :
         try {
             val bodyResponse = gson.fromJson(input.body, MessageByUserResponse.Body::class.java)
             return MessageByUserUi(
-                user = bodyResponse.user.requireNotNullOrBlank("Body.User is required"),
+                user = bodyResponse.user.requireNotNullOrBlank("Body.User"),
                 listMessage = mapListMessage(bodyResponse.listMessage)
             )
         } catch (exception: IllegalArgumentException) {
@@ -27,8 +27,8 @@ class SendMessageMapper @Inject constructor() :
         return listMessage?.let {
             it.map { item ->
                 MessageByUserUi.BodyMessage(
-                    subject = item.subject.requireNotNullOrBlank("Message.Title is required"),
-                    message = item.message.requireNotNullOrBlank("Message.Body is required")
+                    subject = item.subject.requireNotNullOrBlank("Message.Subject"),
+                    message = item.message.requireNotNullOrBlank("Message.Body")
                 )
             }
         } ?: emptyList()

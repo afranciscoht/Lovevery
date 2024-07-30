@@ -14,7 +14,7 @@ import javax.inject.Inject
 
 @Reusable
 class SendMessageRepository @Inject constructor(
-    private val sendMessageRepository: MessagesService,
+    private val messageRepository: MessagesService,
     private val mapperList: BaseMapper<MessageByUserResponse, MessageByUserUi>,
     private val mapperItem: BaseMapper<MessageSentResponse, MessageByUserUi>
 ) {
@@ -22,7 +22,7 @@ class SendMessageRepository @Inject constructor(
     fun getMessageByUser(
         userName: String
     ): Single<MessageByUserUi> {
-        return sendMessageRepository.getMessagesByName(userName).map {
+        return messageRepository.getMessagesByName(userName).map {
             mapperList.map(it)
         }.applySchedulers()
     }
@@ -30,7 +30,7 @@ class SendMessageRepository @Inject constructor(
     fun sendNewMessage(
         message: MessageByUserRequest
     ): Single<MessageByUserUi> {
-        return sendMessageRepository.sendMessage(message).map {
+        return messageRepository.sendMessage(message).map {
             mapperItem.map(it)
         }.applySchedulers()
     }
