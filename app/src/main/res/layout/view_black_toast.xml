@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingStart="@dimen/spacing_3"
+    android:paddingTop="@dimen/spacing_6"
+    android:paddingEnd="@dimen/spacing_3"
+    android:paddingBottom="@dimen/spacing_6"
+    tools:viewBindingIgnore="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_round_black_toast"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/imageView_toast_status_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing_5"
+            app:layout_constraintBottom_toBottomOf="@+id/textview_toast_title"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/textview_toast_title" />
+
+        <TextView
+            android:id="@+id/textview_toast_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing_5"
+            android:layout_marginTop="@dimen/spacing_3"
+            android:layout_marginEnd="@dimen/spacing_6"
+            android:layout_marginBottom="@dimen/spacing_3"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/imageView_toast_status_icon"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/imageView_toast_icon"
+            android:layout_width="@dimen/spacing_7"
+            android:layout_height="@dimen/spacing_7"
+            android:layout_marginStart="@dimen/spacing_6"
+            android:layout_marginTop="@dimen/spacing_7"
+            android:contentDescription="@null"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView_toast"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing_3"
+            android:layout_marginEnd="@dimen/spacing_14"
+            android:layout_marginBottom="@dimen/spacing_7"
+            android:gravity="start"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/imageView_toast_icon"
+            app:layout_constraintTop_toTopOf="@id/imageView_toast_icon"
+            tools:text="Success" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:parentTag="androidx.constraintlayout.widget.ConstraintLayout">
+
+    <View
+        android:id="@+id/view_navigationBar_background"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/bg_navigation_bar_home"
+        android:translationZ="-1dp"
+        app:layout_constraintBottom_toBottomOf="@id/barrier_bottom"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/imageView_end_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacing_6"
+        android:background="@drawable/ic_outline_settings"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/textView_navigationBar_title"
+        style="@style/Lovevery.Text.H4Heavy"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:paddingHorizontal="@dimen/spacing_5"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/textView_subtitle"
+        app:layout_constraintEnd_toEndOf="@+id/guideline_end"
+        app:layout_constraintStart_toStartOf="@+id/guideline_start"
+        app:layout_constraintTop_toTopOf="@id/toolbar"
+        app:layout_constraintVertical_chainStyle="packed"
+        tools:layout_constraintEnd_toEndOf="parent"
+        tools:layout_constraintStart_toStartOf="parent"
+        tools:text="Hola, Antonio" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/textView_navigationBar_subtitle"
+        style="@style/Lovevery.Text.LabelRegular"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacing_1"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:paddingHorizontal="@dimen/spacing_5"
+        android:textColor="@color/neutral_90"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/toolbar"
+        app:layout_constraintEnd_toEndOf="@+id/guideline_end"
+        app:layout_constraintStart_toStartOf="@+id/guideline_start"
+        app:layout_constraintTop_toBottomOf="@+id/textView_navigationBar_title"
+        tools:text="Última conexión: 17 oct. 6:39 p.m." />
+
+</merge>
