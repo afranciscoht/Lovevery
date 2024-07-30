@@ -42,6 +42,7 @@ class AddMessageViewModel @Inject constructor(
 
     fun setUserNameValue(userName: String) {
         userNameValue.value = userName
+        getMessageByName()
     }
 
     fun setSubjectValue(subject: String) {
@@ -70,7 +71,7 @@ class AddMessageViewModel @Inject constructor(
                 .doFinally { showProgress.value = false }
                 .subscribe({
 
-                    listMessage.add(it.listMessage.first())
+                    listMessage.addAll(it.listMessage)
 
                     action.value = if (it.listMessage.isNotEmpty()) {
                         SendMessageAction.ShowListMessageByUser(listMessage)
@@ -97,7 +98,8 @@ class AddMessageViewModel @Inject constructor(
                 .doFinally { action.value = SendMessageAction.ShowLoading(false) }
                 .subscribe({
                     action.value = if (it.listMessage.isNotEmpty()) {
-                        SendMessageAction.ShowListMessageByUser(it.listMessage)
+                        listMessage.addAll(it.listMessage)
+                        SendMessageAction.ShowListMessageByUser(listMessage)
                     } else {
                         SendMessageAction.ShowMessage(
                             resourceRequest.getString(R.string.success_message_empty_list),
@@ -107,8 +109,8 @@ class AddMessageViewModel @Inject constructor(
                 }, {
                     action.value =
                         SendMessageAction.ShowMessage(
-                            resourceRequest.getString(R.string.generic_error),
-                            SnackbarState.ERROR
+                            resourceRequest.getString(R.string.success_message_empty_list),
+                            SnackbarState.SUCCESS
                         )
                 })
         )
