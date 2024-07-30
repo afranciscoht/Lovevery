@@ -9,10 +9,12 @@ import com.lovevery.exam.base.activities.BaseNavigationBarActivity
 import com.lovevery.exam.base.navigation.NavigationBar
 import com.lovevery.exam.base.navigation.interfaces.NavigationControllerProvider
 import com.lovevery.exam.databinding.ActivityMainBinding
+import com.lovevery.exam.flow.fragment.UserRegisteredFragment
 
 class MainActivity :
     BaseNavigationBarActivity(),
-    NavigationControllerProvider {
+    NavigationControllerProvider,
+    UserRegisteredFragment.UserRegisteredListener {
 
     override fun provideNavigationBar() = binding.navigationBarMain
 
@@ -25,6 +27,10 @@ class MainActivity :
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
+    }
+
+    override fun navigateToDetailMessage() {
+        TODO("Not yet implemented")
     }
 
     override fun onSupportNavigateUp(): Boolean {

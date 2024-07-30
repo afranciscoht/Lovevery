@@ -5,7 +5,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.widget.addTextChangedListener
-import com.lovevery.exam.base.application.InjectableApplication_MembersInjector
 import com.lovevery.exam.base.di.component.injector
 import com.lovevery.exam.base.fragments.BaseBottomSheet
 import com.lovevery.exam.base.fragments.viewBinding
@@ -35,6 +34,16 @@ class AddUserFragmentSheet : BaseBottomSheet() {
         super.onViewCreated(view, savedInstanceState)
         bindViewModel()
         initChangeListener()
+        buttonAddUser()
+    }
+
+    private fun buttonAddUser() {
+        binding.apply {
+            buttonAddUser.setOnClickListener {
+                this@AddUserFragmentSheet.dismiss()
+                viewModel.addUser(editTextName.text.toString())
+            }
+        }
     }
 
     private fun bindViewModel() {
