@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.lovevery.exam.components.HandleBarModal xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/barModal_container"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:handle_bar_modal_floating="true"
+    app:handle_bar_modal_peek_height="@dimen/spacing_0"
+    app:handle_bar_modal_subtitle="@string/messages_list_create_message">
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayout_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/border_radius_5"
+        android:layout_marginVertical="@dimen/spacing_5"
+        android:hint="@string/messages_list_create_title"
+        app:boxStrokeColor="@color/heavy_green"
+        app:endIconMode="clear_text"
+        app:endIconTint="@color/heavy_green"
+        app:hintTextColor="@color/heavy_green"
+        app:layout_constraintBottom_toTopOf="@+id/textInputLayout_body"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/view_divider">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editText_title"
+            style="@style/Lovevery.Text.Caption2Regular"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@android:color/transparent"
+            android:inputType="textAutoComplete" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayout_body"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/border_radius_5"
+        android:layout_marginTop="@dimen/spacing_2"
+        android:layout_marginBottom="@dimen/spacing_9"
+        android:hint="@string/messages_list_create_body"
+        app:boxStrokeColor="@color/heavy_green"
+        app:endIconMode="clear_text"
+        app:endIconTint="@color/heavy_green"
+        app:hintTextColor="@color/heavy_green"
+        app:layout_constraintBottom_toTopOf="@+id/button_add_message"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textInputLayout_title">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editText_body"
+            style="@style/Lovevery.Text.Caption2Regular"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@android:color/transparent"
+            android:inputType="textAutoComplete" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/button_add_message"
+        style="@style/Lovevery.MainButton"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginStart="@dimen/spacing_5"
+        android:layout_marginEnd="@dimen/spacing_5"
+        android:layout_marginBottom="@dimen/spacing_5"
+        android:text="@string/messages_list_new_message"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</com.lovevery.exam.components.HandleBarModal>
