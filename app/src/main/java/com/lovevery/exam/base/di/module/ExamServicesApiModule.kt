@@ -7,6 +7,8 @@ import com.lovevery.exam.data.mapper.GetMessagesMapper
 import com.lovevery.exam.data.mapper.SentMessageMapper
 import com.lovevery.exam.data.model.MessageByUserResponse
 import com.lovevery.exam.data.model.MessageSentResponse
+import com.lovevery.exam.data.repository.SendMessageRepository
+import com.lovevery.exam.data.repository.SendMessageRepositoryImpl
 import com.lovevery.exam.flow.model.MessageByUserUi
 import dagger.Binds
 import dagger.Module
@@ -15,6 +17,11 @@ import retrofit2.Retrofit
 
 @Module
 interface ExamServicesApiModule {
+
+    @Binds
+    fun bindsSendMessageRepository(
+        sendMessageRepository: SendMessageRepositoryImpl
+    ): SendMessageRepository
 
     @Binds
     fun bindsSendMessageMapper(

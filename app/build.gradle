@@ -120,10 +120,11 @@ dependencies {
 
     // Test
     implementation "junit:junit:4.13.2"
-    implementation "org.mockito:mockito-core:2.23.0"
+    implementation "org.mockito:mockito-core:4.11.0"
+    implementation "org.mockito.kotlin:mockito-kotlin:4.1.0"
     implementation "com.nhaarman.mockitokotlin2:mockito-kotlin:2.2.0"
-    implementation "androidx.arch.core:core-testing:2.1.0"
-    implementation "org.assertj:assertj-core:3.11.1"
+    implementation "androidx.arch.core:core-testing:2.2.0"
+    implementation "org.assertj:assertj-core:3.24.2"
     implementation "io.mockk:mockk:1.9.kotlin12"
 
 }

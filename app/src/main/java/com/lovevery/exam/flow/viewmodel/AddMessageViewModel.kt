@@ -30,6 +30,7 @@ class AddMessageViewModel @Inject constructor(
     fun getAction() = action.asLiveData()
 
     private val userNameValue = MutableLiveData("")
+    fun getUserNameValue() = userNameValue.asLiveData()
 
     private val isButtonEnable = MediatorLiveData<Boolean>().apply {
         addSource(subjectMessageValue) { value = isMessageComplete() }
@@ -42,7 +43,7 @@ class AddMessageViewModel @Inject constructor(
 
     fun setUserNameValue(userName: String) {
         userNameValue.value = userName
-        getMessageByName()
+        getMessageByName(userName)
     }
 
     fun setSubjectValue(subject: String) {
@@ -61,7 +62,7 @@ class AddMessageViewModel @Inject constructor(
         body: String
     ) {
         val newMessageByUserRequest = MessageByUserRequest(
-            user = userNameValue.asValue(),
+            user = getUserNameValue().asValue(),
             subject = subject,
             message = body
         )
@@ -91,9 +92,9 @@ class AddMessageViewModel @Inject constructor(
         )
     }
 
-    fun getMessageByName() {
+    fun getMessageByName(userName: String) {
         disposable.add(
-            repository.getMessageByUser(userNameValue.asValue())
+            repository.getMessageByUser(userName)
                 .doOnSubscribe { action.value = SendMessageAction.ShowLoading(true) }
                 .doFinally { action.value = SendMessageAction.ShowLoading(false) }
                 .subscribe({
