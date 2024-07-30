@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:parentTag="androidx.constraintlayout.widget.ConstraintLayout">
+
+    <View
+        android:id="@+id/view_top_indicator"
+        android:layout_width="@dimen/modal_indicator_width"
+        android:layout_height="@dimen/modal_indicator_height"
+        android:layout_marginTop="@dimen/modal_indicator_top_margin"
+        android:background="@drawable/bg_modal_indicator"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/view_contentBackground"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/modal_content_margin"
+        android:background="@drawable/bg_modal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view_top_indicator" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/textView_title"
+        style="@style/Lovevery.Text.Caption2Regular"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/spacing_7"
+        android:layout_marginTop="@dimen/spacing_7"
+        android:layout_marginEnd="@dimen/modal_text_view_end_margin"
+        android:textColor="@color/neutral_90"
+        android:visibility="gone"
+        app:layout_constraintEnd_toStartOf="@+id/imageView_icon"
+        app:layout_constraintStart_toStartOf="@+id/view_contentBackground"
+        app:layout_constraintTop_toTopOf="@+id/view_contentBackground"
+        tools:text="Label description"
+        tools:visibility="visible" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/textView_subtitle"
+        style="@style/Lovevery.Text.HeadingRegular"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/spacing_7"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/view_contentBackground"
+        app:layout_constraintTop_toBottomOf="@+id/textView_title"
+        app:layout_goneMarginTop="@dimen/spacing_7"
+        tools:text="Label description" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/imageView_icon"
+        android:layout_width="@dimen/modal_icon_size"
+        android:layout_height="@dimen/modal_icon_size"
+        android:layout_marginTop="@dimen/modal_top_views_margin"
+        android:layout_marginEnd="@dimen/spacing_7"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/view_contentBackground"
+        app:tint="@color/black" />
+
+    <View
+        android:id="@+id/view_divider"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/underline_height"
+        android:layout_marginHorizontal="@dimen/spacing_7"
+        android:layout_marginTop="@dimen/spacing_5"
+        android:background="@drawable/bg_default_divider"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView_subtitle"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <FrameLayout
+        android:id="@+id/layout_skeleton"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="@dimen/spacing_7"
+        android:background="@color/white"
+        android:clickable="true"
+        android:focusable="true"
+        android:outlineProvider="none"
+        android:translationZ="1dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/view_contentBackground"
+        app:layout_constraintStart_toStartOf="@id/view_contentBackground"
+        app:layout_constraintTop_toTopOf="@id/view_contentBackground">
+
+        <com.facebook.shimmer.ShimmerFrameLayout
+            android:id="@+id/shimmer_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone" />
+
+    </FrameLayout>
+
+</merge>

@@ -47,6 +47,16 @@
         <item name="lineHeight">@dimen/font_line_height_caption</item>
     </style>
 
+    <style name="Lovevery.Text.HeadingRegular" parent="Lovevery.Text.Regular">
+        <item name="android:textSize">@dimen/font_size_headline</item>
+        <item name="lineHeight">@dimen/font_line_height_headline_1</item>
+    </style>
+
+    <style name="Lovevery.Text.Caption2Regular" parent="Lovevery.Text.Regular">
+        <item name="android:textSize">@dimen/font_size_body</item>
+        <item name="lineHeight">@dimen/font_line_height_caption</item>
+    </style>
+
     <style name="Lovevery.Text.Regular" parent="Lovevery.Text">
         <item name="fontFamily">@font/roboto</item>
         <item name="android:fontFamily">@font/roboto</item>
