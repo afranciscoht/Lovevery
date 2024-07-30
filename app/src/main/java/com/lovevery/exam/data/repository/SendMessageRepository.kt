@@ -1,6 +1,6 @@
-package com.lovevery.exam.base.data.repository
+package com.lovevery.exam.data.repository
 
-import com.lovevery.exam.base.data.service.MessagesService
+import com.lovevery.exam.data.service.MessagesService
 import dagger.Reusable
 import javax.inject.Inject
 

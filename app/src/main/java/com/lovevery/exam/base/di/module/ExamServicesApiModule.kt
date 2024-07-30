@@ -1,6 +1,6 @@
 package com.lovevery.exam.base.di.module
 
-import com.lovevery.exam.base.data.service.MessagesService
+import com.lovevery.exam.data.service.MessagesService
 import com.lovevery.exam.base.di.network.Microservices
 import dagger.Module
 import dagger.Provides

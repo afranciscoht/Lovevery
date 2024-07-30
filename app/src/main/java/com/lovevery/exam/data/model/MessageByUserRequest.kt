@@ -1,4 +1,4 @@
-package com.lovevery.exam.base.data.model
+package com.lovevery.exam.data.model
 
 import com.google.gson.annotations.SerializedName
 
