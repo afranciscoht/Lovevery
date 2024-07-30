@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Lovevery" />
+
+    <style name="Lovevery.NavigationBar" />
+
+    <style name="Lovevery.Snackbar" />
+
+    <style name="Lovevery.StoreCard" />
+
+    <style name="Lovevery.HandleBarModal" />
+
+    <style name="Lovevery.CircleImageStyle" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
+    </style>
+
+    <style name="Lovevery.Text">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:lineSpacingExtra">@dimen/font_line_spacing</item>
+        <item name="android:letterSpacing">@dimen/font_letter_spacing_empty</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+
+    <style name="Lovevery.Text.Bold" parent="Lovevery.Text">
+        <item name="fontFamily">@font/roboto_bold</item>
+        <item name="android:fontFamily">@font/roboto_bold</item>
+    </style>
+
+    <style name="Lovevery.Text.Heavy" parent="Lovevery.Text">
+        <item name="fontFamily">@font/roboto_heavy</item>
+        <item name="android:fontFamily">@font/roboto_heavy</item>
+    </style>
+
+    <style name="Lovevery.Text.H4Heavy" parent="Lovevery.Text.Heavy">
+        <item name="android:textSize">@dimen/font_size_title_micro</item>
+        <item name="lineHeight">@dimen/font_line_height_title_micro</item>
+    </style>
+
+    <style name="Lovevery.Text.Caption1Bold" parent="Lovevery.Text.Bold">
+        <item name="android:textSize">@dimen/font_size_caption</item>
+        <item name="lineHeight">@dimen/font_line_height_caption</item>
+    </style>
+
+    <style name="Lovevery.Text.Caption1Regular" parent="Lovevery.Text.Regular">
+        <item name="android:textSize">@dimen/font_size_caption</item>
+        <item name="lineHeight">@dimen/font_line_height_caption</item>
+    </style>
+
+    <style name="Lovevery.Text.Regular" parent="Lovevery.Text">
+        <item name="fontFamily">@font/roboto</item>
+        <item name="android:fontFamily">@font/roboto</item>
+    </style>
+
+    <style name="Lovevery.Text.LabelRegular" parent="Lovevery.Text.Regular">
+        <item name="android:textSize">@dimen/font_size_label</item>
+        <item name="lineHeight">@dimen/font_line_height_label_1</item>
+    </style>
+
+</resources>

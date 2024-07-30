@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <item name="first_menu_action" type="id" tools:ignore="ResourceName" />
+    <item name="second_menu_action" type="id" tools:ignore="ResourceName" />
+    <item name="switch_icon_layer" type="id" tools:ignore="ResourceName" />
+</resources>

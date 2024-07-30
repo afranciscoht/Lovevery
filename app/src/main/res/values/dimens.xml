@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="navigation_bar_circle_icon_padding">6dp</dimen>
+    <dimen name="navigation_bar_default_margin">16dp</dimen>
+    <dimen name="navigation_bar_icon_size">24dp</dimen>
+    <dimen name="icon_regular_size">32dp</dimen>
+
+    <!-- Navigation Bar Dimens -->
+    <dimen name="navigation_bar_default_size">64dp</dimen>
+    <dimen name="navigation_bar_menu_margin">95dp</dimen>
+    <dimen name="navigation_bar_home_start_margin">56dp</dimen>
+    <dimen name="navigation_bar_home_height">64dp</dimen>
+
+    <!-- Generic dimens -->
+    <dimen name="spacing_0">0dp</dimen>
+    <dimen name="spacing_1">2dp</dimen>
+    <dimen name="spacing_2">4dp</dimen>
+    <dimen name="spacing_3">8dp</dimen>
+    <dimen name="spacing_4">12dp</dimen>
+    <dimen name="spacing_5">16dp</dimen>
+    <dimen name="spacing_6">20dp</dimen>
+    <dimen name="spacing_7">24dp</dimen>
+    <dimen name="spacing_8">28dp</dimen>
+    <dimen name="spacing_9">32dp</dimen>
+    <dimen name="spacing_10">36dp</dimen>
+    <dimen name="spacing_11">40dp</dimen>
+    <dimen name="spacing_12">44dp</dimen>
+    <dimen name="spacing_13">48dp</dimen>
+    <dimen name="spacing_14">52dp</dimen>
+    <dimen name="spacing_15">56dp</dimen>
+    <dimen name="spacing_16">60dp</dimen>
+
+    <!-- Font size -->
+    <dimen name="font_auto_size_granularity">1sp</dimen>
+    <dimen name="font_size_huge_title">48sp</dimen>
+    <dimen name="font_size_title">40sp</dimen>
+    <dimen name="font_size_title_medium">32sp</dimen>
+    <dimen name="font_size_title_small">26sp</dimen>
+    <dimen name="font_size_title_micro">24sp</dimen>
+    <dimen name="font_size_headline">20sp</dimen>
+    <dimen name="font_size_body">16sp</dimen>
+    <dimen name="font_size_caption">14sp</dimen>
+    <dimen name="font_size_caption_medium">12sp</dimen>
+    <dimen name="font_size_subhead">10sp</dimen>
+    <dimen name="font_size_label">10sp</dimen>
+    <dimen name="font_size_footnote">8sp</dimen>
+    <dimen name="font_size_disclaimer">6sp</dimen>
+    <dimen name="font_line_height_huge_title">56sp</dimen>
+    <dimen name="font_line_height_title">44sp</dimen>
+    <dimen name="font_line_height_title_medium">36sp</dimen>
+    <dimen name="font_line_height_title_small">32sp</dimen>
+    <dimen name="font_line_height_title_micro">28sp</dimen>
+    <dimen name="font_line_height_headline_1">24sp</dimen>
+    <dimen name="font_line_height_body_1">20sp</dimen>
+    <dimen name="font_line_height_caption">16sp</dimen>
+    <dimen name="font_line_height_subhead_1">12sp</dimen>
+    <dimen name="font_line_height_label_1">12sp</dimen>
+    <dimen name="font_line_height_footnote">12sp</dimen>
+    <dimen name="font_line_height_disclaimer">8sp</dimen>
+    <dimen name="font_line_spacing">0sp</dimen>
+    <dimen name="font_letter_spacing_empty">0</dimen>
+    <dimen name="font_letter_spacing_subhead">0.12</dimen>
+
+    <dimen name="card_default_corner_radius">16dp</dimen>
+
+    <dimen name="button_corner_radius">18dp</dimen>
+
+    <dimen name="snackbar_start_icon_size">22dp</dimen>
+    <dimen name="snackbar_end_icon_size">24dp</dimen>
+
+    <dimen name="stepped_view_track_height">8dp</dimen>
+    <dimen name="stepped_view_small_margin">2dp</dimen>
+    <dimen name="stepped_dot_size">4dp</dimen>
+    <dimen name="stepped_view_offset">10dp</dimen>
+
+    <!-- Radius -->
+    <dimen name="border_radius_1">4dp</dimen>
+    <dimen name="border_radius_2">8dp</dimen>
+    <dimen name="border_radius_3">12dp</dimen>
+    <dimen name="border_radius_4">16dp</dimen>
+    <dimen name="border_radius_5">20dp</dimen>
+    <dimen name="border_radius_6">24dp</dimen>
+    <dimen name="border_radius_7">28dp</dimen>
+    <dimen name="border_radius_8">32dp</dimen>
+    <dimen name="radius_100">100dp</dimen>
+
+    <dimen name="step_margin">8dp</dimen>
+    <dimen name="step_height">4dp</dimen>
+
+    <dimen name="modal_peek_height">161dp</dimen>
+    <dimen name="modal_indicator_width">32dp</dimen>
+    <dimen name="modal_indicator_height">4dp</dimen>
+    <dimen name="modal_indicator_top_margin">4dp</dimen>
+    <dimen name="modal_indicator_corner_radius">2dp</dimen>
+    <dimen name="modal_content_margin">8dp</dimen>
+    <dimen name="modal_text_view_end_margin">8dp</dimen>
+    <dimen name="modal_icon_size">24dp</dimen>
+    <dimen name="modal_top_views_margin">24dp</dimen>
+    <dimen name="underline_height">0.5dp</dimen>
+    <dimen name="bar_modal_floating_corner_radius">40dp</dimen>
+
+</resources>
